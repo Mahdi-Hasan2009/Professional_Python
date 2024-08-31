@@ -6,7 +6,7 @@ def plane_ride_costs(city):
       return 183
   elif "Tampa" == city:
       return 220
-  elif "Pittsburh" == city:
+  elif "Pittsburgh" == city:
     return 222
   elif "Los Angeles" == city:
     return 457
