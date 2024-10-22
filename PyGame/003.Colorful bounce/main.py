@@ -45,13 +45,28 @@ def update(self):
   # Check for collision with left or right boundaries and reverse direction
   if self.rect.left <=0 or self.rect.right >= 500:
     self.velocity[0] =- self.velocity[0]
-    boundary_hit = True
-    
+    boundary_hit = True   
     
   # Check for collision with top or bottom boundaries and reverse direction
   if self.rect.top <=0 or self.rect.bottom >= 400:
     self.velocity[1] =- self.velocity[1]
     boundary_hit = True
     
-  # If a boundary was hit, post events to ca
+  # If a boundary was hit, post events to change colors
+  if boundary_hit:                        
+    pygame.event.post(pygame.event.Event(SPRITE_COLOR_CHANGE_EVENT))
+    pygame.event.post(pygame.event.Event(BACKGROUND_COLOR_CHANGE_EVENT))
+
+# Method to change the sprite's color
+def change_color(self):
+  self.image.fill(random.choice[YELLOW, MAGENTA, ORANGE, WHITE])
+
+# Function to change the background color
+def change_background_color():
+  global bg_color
+  bg_color = random.choice([BLUE, LIGHTBLUE, DARKBLUE])
   
+
+# Create a group to hold the sprite
+all_sprites_list = pygame.sprite.Group()
+# Instantiate the sprite
