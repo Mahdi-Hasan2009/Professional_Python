@@ -1,0 +1,189 @@
+Outline
+We have already learned all the necessary concepts of game building. So, let's get started with a capstone project of a space invader game to implement all the learnings of Pygame.
+
+Overview
+
+ 
+
+Topics introduced
+ 
+
+Space Invader Game
+Activity Explanation 
+Topics in Details -
+Space Invader Game
+The Space Invaders project is a straightforward Python programme. This is a straightforward spacecraft shooting game. In this game, the player must move their shooting gun with the arrow keys and shoot it with the spacebar. For easier gameplay, there is a basic and clear GUI. The player must manoeuvre the gun and aim at the spaceship using the arrow keys. The game has a lot of potentials. So, let's get started with our journey of creating this amazing game.
+
+Activity Explanation 
+
+Part 1: Initialization and Setup
+
+ 
+
+1. Importing Libraries and Setting Constants
+
+
+
+ 
+
+Importing Libraries: This code imports essential Python libraries. math and random are for mathematical operations and generating random numbers. pygame is a library for creating video games.
+Constants: These are predefined values like screen size (SCREEN_WIDTH, SCREEN_HEIGHT), player's starting position (PLAYER_START_X, PLAYER_START_Y), and settings for game elements like enemies and bullets.
+ 
+ 
+
+2. Initializing Pygame and Creating the Game Window
+
+
+
+ 
+
+Initializing Pygame: pygame.init() starts all the necessary modules for Pygame.
+Creating the Game Window: pygame.display.set_mode() creates the game window with the specified SCREEN_WIDTH and SCREEN_HEIGHT.
+ 
+
+3. Loading Background, Caption, and Icon
+
+ 
+
+
+
+Background: Loads 'background.png' as the game's background.
+Caption and Icon: Sets the game window title to "Space Invader" and uses 'ufo.png' as the window icon.
+
+
+
+4. Initializing the Player
+
+
+
+ 
+
+Player Image: Loads 'player.png' to represent the player.
+Player Position: Initializes the player's position using PLAYER_START_X and PLAYER_START_Y.
+Player Movement: playerX_change is for tracking horizontal movement, initially set to 0.
+
+ 
+
+Part 2: Enemy and Bullet Setup
+ 
+
+1. Initializing Enemy Variables
+
+ 
+
+
+
+Enemy Lists: These lists (enemyImg, enemyX, enemyY, enemyX_change, enemyY_change) will store information for each enemy, such as their image, position, and movement.
+Number of Enemies: num_of_enemies is set to 6, meaning there will be six enemies in the game.
+
+
+ 
+
+2. Creating Enemies
+
+
+
+
+ 
+
+Loop for Enemies: This loop runs six times (once for each enemy).
+Loading Enemy Image: Each enemy gets the same image ('enemy.png').
+Random Starting Position: Enemies start at random positions. random.randint is used to choose a random X and Y position within specified limits.
+Setting Movement Speed: Each enemy's horizontal (enemyX_change) and vertical (enemyY_change) speeds are set using constants.
+ 
+
+3. Initializing Bullet Variables
+
+ 
+
+
+ 
+
+Bullet Image: Loads the image for the bullet ('bullet.png').
+Bullet Position: bulletX and bulletY set the initial position of the bullet. bulletY is set to the player's Y position, so it appears to fire from the player.
+Bullet Movement: bulletY_change is the speed at which the bullet moves up the screen. bulletX_change is not used but is included for consistency.
+Bullet State: bullet_state can be either "ready" (meaning ready to fire) or "fire" (meaning the bullet is currently moving).
+
+
+
+
+
+ 
+
+Part 3: Score and Text Rendering Functions
+
+ 
+
+1. Initializing Score and Game Over Text
+
+
+
+
+ 
+
+Sets the initial score to 0 and prepares a font for displaying the score.
+Prepare a larger font for displaying the "GAME OVER" message.
+
+
+ 
+
+2. Function to Show Score
+
+
+
+
+ 
+
+Converts the score_value to a string and creates a text image which is then drawn on the screen at the specified coordinates.
+ 
+
+3. Function to Display Game Over Text
+
+ 
+
+
+
+ 
+
+Creates a text image for "GAME OVER" and draws it at a fixed position on the screen.
+over_font.render("GAME OVER", True, (255, 255, 255)) creates an image of the text "GAME OVER". The True argument enables anti-aliasing, making the text smoother, and (255, 255, 255) sets the color of the text to white.
+ 
+
+4. Function to Draw the Player
+
+ 
+
+
+
+Places the player's image at the given x and y coordinates.
+
+
+ 
+
+5. Function to Draw an Enemy
+
+
+Places the specified enemy's image at the given x and y coordinates.
+
+
+ 
+
+6. Function to Fire a Bullet
+ 
+
+
+ 
+
+Uses the global keyword for bullet_state to modify its value.
+Changes the state of the bullet to "fire" and draws the bullet image at an offset from the player's position.
+
+
+ 
+
+7. Function to Check for Collision
+
+
+
+This function checks whether a bullet has hit an enemy.
+It calculates the Euclidean distance between the bullet and the enemy using the formula for the distance between two points in a 2D space: sqrt((x2 - x1)^2 + (y2 - y1)^2).
+If this distance is less than COLLISION_DISTANCE, it means the bullet is close enough to the enemy to be considered a collision, and the function returns True. Otherwise, it returns False
