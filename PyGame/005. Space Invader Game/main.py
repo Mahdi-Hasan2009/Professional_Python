@@ -25,4 +25,8 @@ background = pygame.image.load('assets/background.png')
 
 # Caption and Icon
 pygame.display.set_caption("Space Invader")
-icon = pygame.image.load('assets/')
+icon = pygame.image.load('assets/ufo.png')
+pygame.display.set_icon(icon)
+
+# Player
+playerImg = pygame.image.load('assets/')
