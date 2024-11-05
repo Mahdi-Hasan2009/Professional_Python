@@ -6,7 +6,7 @@ Overview
  
 
 Topics introduced
- 
+
 
 Space Invader Game
 Activity Explanation 
