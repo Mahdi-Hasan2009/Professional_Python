@@ -187,3 +187,120 @@ Changes the state of the bullet to "fire" and draws the bullet image at an offse
 This function checks whether a bullet has hit an enemy.
 It calculates the Euclidean distance between the bullet and the enemy using the formula for the distance between two points in a 2D space: sqrt((x2 - x1)^2 + (y2 - y1)^2).
 If this distance is less than COLLISION_DISTANCE, it means the bullet is close enough to the enemy to be considered a collision, and the function returns True. Otherwise, it returns False
+
+
+Outline
+Let's continue with our capstone project of a space invader game to implement all the learnings of Pygame.
+
+Overview
+
+ 
+
+Topics introduced
+ 
+
+Space Invader Game
+Activity explanation
+Topics in Details -
+Space Invader Game
+The Space Invaders project is a straightforward Python programme. This is a straightforward spacecraft shooting game. In this game, the player must move their shooting gun with the arrow keys and shoot it with the spacebar. For easier gameplay, there is a basic and clear GUI. The player must manoeuvre the gun and aim at the spaceship using the arrow keys. The game has a lot of potentials. So, let's get started with our journey of creating this amazing game.
+
+Space Invader Game
+ 
+
+Part 4: Game Loop - Detailed Explanations
+
+ 
+
+1. Setting Up the Game Loop
+
+
+
+ 
+
+running = True: Initializes a variable to keep the game loop running.
+while running:: Starts the main game loop.
+screen.fill((0, 0, 0)): Fills the screen with black color each frame.
+screen.blit(background, (0, 0)): Draws the background image on the screen.
+
+
+ 
+
+2. Event Handling
+
+
+
+for event in pygame.event.get():: Processes all events in the event queue.
+if event.type == pygame.QUIT:: Checks if the window's close button is clicked.
+if event.type == pygame.KEYDOWN:: Detects if any key is pressed down.
+if event.key == pygame.K_LEFT:: Checks if the left arrow key is pressed.
+playerX_change = -5: Moves the player left.
+if event.key == pygame.K_RIGHT:: Checks if the right arrow key is pressed.
+playerX_change = 5: Moves the player right.
+if event.key == pygame.K_SPACE and bullet_state == "ready":: Fires a bullet if the spacebar is pressed and the bullet is ready.
+if event.type == pygame.KEYUP:: Checks if a key is released.
+playerX_change = 0: Stops the player's movement when the key is released.
+
+
+ 
+
+3. Player Movement
+
+
+
+ 
+
+playerX += playerX_change: Updates the player's X-coordinate based on movement.
+max(0, min(playerX, SCREEN_WIDTH - 64)): Ensures the player stays within the screen's horizontal boundaries.
+ 
+
+4. Enemy Movement and Game Over Check
+
+
+
+ 
+
+for i in range(num_of_enemies):: Iterates through each enemy.
+if enemyY[i] > 340:: Checks if any enemy has crossed a specific Y-coordinate.
+enemyY[j] = 2000: Moves all enemies off-screen in case of game over.
+game_over_text(): Displays the game over message.
+enemyX[i] += enemyX_change[i]: Updates each enemy's horizontal position.
+if enemyX[i] <= 0 or enemyX[i] >= SCREEN_WIDTH - 64:: Checks if enemies hit the screen's edge.
+enemyX_change[i] *= -1: Reverses the enemy's direction upon hitting an edge.
+enemyY[i] += enemyY_change[i]: Moves the enemy down after changing direction.
+
+
+ 
+
+5. Collision Check and Score Update
+
+
+if isCollision(enemyX[i], enemyY[i], bulletX, bulletY):: Checks for collisions between bullets and enemies.
+bulletY = PLAYER_START_Y: Resets the bullet's position.
+bullet_state = "ready": Makes the bullet ready to fire again.
+score_value += 1: Increments the score upon hitting an enemy.
+random.randint(0, SCREEN_WIDTH - 64): Randomly repositions the hit enemy horizontally.
+random.randint(ENEMY_START_Y_MIN, ENEMY_START_Y_MAX): Randomly repositions the hit enemy vertically.
+ 
+
+6. Bullet Movement
+
+
+
+if bulletY <= 0:: Checks if the bullet has moved off the top of the screen.
+bulletY = PLAYER_START_Y: Resets the bullet to the player's Y-coordinate.
+bullet_state = "ready": Makes the bullet ready to fire again.
+elif bullet_state == "fire":: Checks if the bullet is in the "fire" state.
+fire_bullet(bulletX, bulletY): Draws the bullet on the screen.
+bulletY -= bulletY_change: Moves the bullet upwards.
+
+
+ 
+
+7. Drawing Player, Score, and Updating Display
+
+
+
+player(playerX, playerY): Draws the player at its current position.
+show_score(textX, textY): Displays the current score.
+pygame.display.update(): Updates the entire screen with new changes.
