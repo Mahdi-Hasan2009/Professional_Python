@@ -2,9 +2,6 @@ Outline
 We have already learned all the necessary concepts of game building. So, let's get started with a capstone project of a space invader game to implement all the learnings of Pygame.
 
 Overview
-
- 
-
 Topics introduced
 
 
@@ -23,8 +20,6 @@ Part 1: Initialization and Setup
 1. Importing Libraries and Setting Constants
 
 
-
- 
 
 Importing Libraries: This code imports essential Python libraries. math and random are for mathematical operations and generating random numbers. pygame is a library for creating video games.
 Constants: These are predefined values like screen size (SCREEN_WIDTH, SCREEN_HEIGHT), player's starting position (PLAYER_START_X, PLAYER_START_Y), and settings for game elements like enemies and bullets.
@@ -190,6 +185,7 @@ If this distance is less than COLLISION_DISTANCE, it means the bullet is close e
 
 
 Outline
+
 Let's continue with our capstone project of a space invader game to implement all the learnings of Pygame.
 
 Overview
@@ -298,8 +294,6 @@ bulletY -= bulletY_change: Moves the bullet upwards.
  
 
 7. Drawing Player, Score, and Updating Display
-
-
 player(playerX, playerY): Draws the player at its current position.
 show_score(textX, textY): Displays the current score.
 pygame.display.update(): Updates the entire screen with new changes.
