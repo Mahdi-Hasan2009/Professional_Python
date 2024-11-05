@@ -300,7 +300,6 @@ bulletY -= bulletY_change: Moves the bullet upwards.
 7. Drawing Player, Score, and Updating Display
 
 
-
 player(playerX, playerY): Draws the player at its current position.
 show_score(textX, textY): Displays the current score.
 pygame.display.update(): Updates the entire screen with new changes.
