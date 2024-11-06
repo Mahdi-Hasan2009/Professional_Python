@@ -1,0 +1,179 @@
+Outline
+Python is a versatile programming language and can be used for multiple purposes, one of which is GUI application development. This lesson will teach the basics of Python library Tkinter and the different widget options available.
+
+Overview
+
+ 
+
+Topics introduced
+ 
+
+Introduction to Tkinter library
+Tkinter window
+Tkinter widgets 
+Topics in Details -
+Introduction to Tkinter Library
+ 
+
+Before we begin with the Tkinter library, let's first understand a GUI application and why we need them?
+
+ 
+
+A graphical user interface (GUI) is an application featuring buttons, windows, and a variety of other widgets that the user can use to interact with to get a job done. A web browser is an excellent example. There are buttons, tabs, and the main window that loads all of the material, and you can use these widgets to read the content and perform an operation.
+
+Tkinter is a Python library that helps to create GUI applications in a faster and easier way. It is also the most often used method for creating GUI applications.
+
+GUIs built with the help of Tkinter may look outdated, but it is comparatively easy to use. 
+
+
+
+To use this library, we need to import it first. There are multiple ways to do it -
+
+
+
+Tkinter Window - 
+ 
+
+The fundamental element of Tkinter GUI is the window. In this window, all the aspects of the GUI are present, like - buttons, text box, etc.
+To create a Tkinter window, you can use Tk() function.
+
+
+
+
+ 
+
+You can set the title for this window by using the below-mentioned function-
+window_name.title(“Title”)
+
+You can even set the geometry of the window by using the below-mentioned function- 
+window_name.geometry(“widthxheight”) 
+
+When your application is ready to run, you call the mainloop() method. The mainloop() function is an infinite loop that runs the application, waits for an event, and processes the event as long as the window is open.
+window.mainloop()
+
+ 
+
+Example - 
+
+
+
+Tkinter Widgets 
+The Python GUI framework Tkinter's bread and butter are widgets. They're the parts of your application that allow people to interact with it. In Tkinter, each widget has its class. Here are a few examples of widgets:
+
+ 
+
+Widget Class
+
+Use
+
+Label
+
+A label widget displays text on the screen.
+
+Button
+
+When a button is clicked, it can include text and perform an action.
+
+Entry
+
+An entry widget allows only one line of text to be entered.
+
+Text
+
+A text widget allows you to type multiple lines of text.
+
+Frame
+
+A frame is a rectangle used to group related widgets or provide padding between widgets.
+
+ 
+
+Let’s have a look at these widgets one by one and what all can be done with them -
+
+ 
+
+Label -
+This widget is used to display text on the window. You can also decide the height, width, foreground, and background color for this label. You can add a Label by using - 
+
+Label(text = “Sample text ”, fg = “white”, bg = “green”, height=20, width=5)
+
+
+
+ 
+
+Button -
+This widget is used to add buttons to your window. You can make similar customizations to it. To add a button, use - 
+
+Button(text = “Click here”, fg = “white”, bg = “orange”, height=10, width=10)
+
+ 
+
+
+
+You can also add a function to be called when buttons are clicked to perform a particular operation. To do that, you need to use the command parameter -
+
+Button(text = “Demo”, fg = “white”, bg = “black”, command = func_name)
+
+ 
+
+Entry - 
+This widget accepts a single line as input from the user.
+
+Entry(fg="black", bg="grey", width=50)
+
+ 
+
+
+
+ 
+
+You can retrieve the input from user by - entry_name.get() function.
+You can insert a text in the entry widget by using - entry_name.insert(index, ‘text’) function. This will add text before the character at the given index.
+You can delete the text inside the entry widget by using - entry_name.delete() function.
+ 
+
+Text - 
+This widget accepts multi-line input from the user.
+
+Text(fg="black", bg="grey", height=10)
+
+ 
+
+
+
+ 
+
+You can retrieve the input from user by - entry_name.get() function.
+You can insert a text inside the text box by using - entry_name.insert(index, ‘text’) function. This will add text before the character at the given index.
+You can delete the text inside the text box by using - entry_name.delete() function.
+ 
+
+Important points to note -
+
+ 
+
+To pack widgets in rows and columns and manage their geometry, we use the pack() function. It is mandatory to use widget_name.pack() to make them visible in the window.
+Here are a few instances of indexes for insert and delete operations, along with how to interpret them -
+ 
+
+Index
+
+Description
+
+“END”
+
+This means the end of the document
+
+“1.0”
+
+This means line 1, index 0
+
+“3.end”
+
+Newline at the end of line 3
+
+“2.2”
+
+This means lin2, index 2
+
+ 
