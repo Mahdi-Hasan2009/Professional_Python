@@ -12,4 +12,4 @@ frame = Frame(master=root, height=200, width=360, bg="#FAB072")
 
 # Add widgets
 # Add Label
-lbl1 = Label()
+lbl1 = Label(frame, text='Name', bg="navyblue", fg='white', width=12)
