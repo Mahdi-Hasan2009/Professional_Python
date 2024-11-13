@@ -1,0 +1,59 @@
+
+In this lesson, you will learn about events and how to use event handlers in Tkinter. You will also learn how to increase the interactivity of an application by using a message box.
+
+Overview
+
+ 
+
+Topics introduced
+ 
+
+Events
+Event Handler
+Message Box
+Topics in Details -
+Events  
+ 
+
+An event is any activity that occurs during the event loop that may cause the application to perform some action, such as pressing a key or mouse button.
+The mainloop method is used to enter an event loop, where a Tkinter program spends most of its time. After that, it's just waiting for anything to happen. The user can trigger events by pressing keys or moving their mouse.
+Event Handlers
+ 
+
+Tkinter provides a system for dealing with events by the programmer. For example, it's possible to link Python functions and methods to events for each widget.
+If the defined event occurs in the widget, the "handler" function is called with an event object, describing the event.
+Tkinter widgets include a method - .bind() that knows when to call an event handler.
+Also, the command parameter of the Button() function is an event handler that calls the associated function whenever the event of button click occurs.
+ 
+
+Using .bind()
+
+Use bind to call an event handler whenever an event on a widget happens ().
+Because it is called every time the event occurs, the event handler is considered to be bound to the event.
+Syntax - 
+widget.bind(“<event_name>”, event_handler)
+
+ 
+
+Now consider an example of how to use bind to handle a keypress event -
+
+
+ 
+
+Here, using window.bind(), the handle keypress() event handler is bound to a "Key>" event (). This program will print the character in the console pressed whenever a key is pushed while the application is active.
+Messagebox in Tkinter 
+ 
+
+The MessageBox Widget is used in Python programs to show message boxes. This module is used to display a message and has various features.
+messagebox.Function_Name(title, message)
+
+ 
+
+The messagebox widget has several functions and methods. The name of these functions are mentioned below, along with their uses -
+showinfo(): Provide the user with some helpful information.
+showwarning(): Show the user the warning.
+showerror(): Shows the user the error message.
+askquestion(): Pose a question to the user, who must respond with a yes or no.
+askokcancel(): Confirm the user's action concerning a particular application activity.
+askyesno(): The user can respond with a yes or no for various actions.
+askretrycancel(): Inquires whether the user wants to repeat a task.
