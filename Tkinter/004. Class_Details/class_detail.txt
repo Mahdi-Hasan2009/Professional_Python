@@ -1,0 +1,59 @@
+Outline
+This lesson will teach you how to create a text editor application using the Python Tkinter library.
+
+Overview
+
+ 
+
+Topics introduced
+ 
+
+Text Editor Application
+Open files using Tkinter
+Save files using Tkinter
+Topics in Details -
+Text Editor Application  
+ 
+
+A text editor consists of three operations primarily - 
+Edit a file
+Open a file
+Save a file
+To save a file in Tkinter - you can use the askopenfile() function.
+To save a file in Tkinter - you can use the asksaveasfile() function.
+The text editor application that we are trying to create here is going to appear somewhat like this - 
+
+
+ 
+
+ 
+
+Open files using Tkinter 
+
+ 
+
+When dealing with GUI, you may need to access files and read data from them, or you may need to write data to them. Although the open() function (built-in to Python) can be used to accomplish this, one may not be able to choose any required file until a path to that file is provided in code.
+You may not need to give the path of any file while using GUI; instead, you may simply open a file and read its contents.
+For this purpose, you can use - the askopenfile() method.
+We must select the mode in which we want to open the file, which includes the following options:
+r - perform a read operation on an existing file.
+w - perform a write operation on an existing file. 
+a - To append to an existing file, open it. Existing data will not be overridden.
+To open a particular file type, specify it in the filetypes option, along with the extension.
+Example -
+
+
+ 
+
+Save files using Tkinter.  
+When working with files, you may need to open them, perform actions on them, and save them. 
+The function asksaveasfile() is used to save the user's file (extension can be set explicitly, or you can set default extensions also). This function belongs to the filedialog class.
+Example - 
+
+
+ 
+
+
+
+ 
+
