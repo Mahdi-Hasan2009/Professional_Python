@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+# Also we can write import tkinter.messagebox
 
 # Create Window
 window = Tk()
