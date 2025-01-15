@@ -4,7 +4,8 @@ def OnSquareTime(n):
     for j in range(0,n):
       print("ম", end=" ")
       iterations+=1
-    print(f'When\'n\' is {n} Iterations = {iterations}')
+    print("")
+  print(f'\nWhen\'n\' is {n} Iterations = {iterations}\n')
     
 
 OnSquareTime(4)
