@@ -35,14 +35,15 @@ class Colors:
     BOLD = "\033[1m"
     UNDERLINE = "\033[4m"
     RESET = "\033[0m"
+    ENTER = "\n"
 
-total_amount = int(input(f"{Colors.CYAN}{Colors.BOLD}Enter the total amount: {Colors.RESET}"))
+total_amount = int(input(f"{Colors.ENTER}{Colors.CYAN}{Colors.BOLD}Enter the total amount: {Colors.RESET}"))
 pygame.mixer.music.load("cash.mp3")
 pygame.mixer.music.play()
 
 list_of_notes = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
 
-print(f"\n{Colors.UNDERLINE}{Colors.HEADER}Breakdown of Notes:{Colors.RESET}\n")
+print(f"{Colors.ENTER}{Colors.UNDERLINE}{Colors.HEADER}Breakdown of Notes:{Colors.RESET}{Colors.ENTER}")
 
 for note in list_of_notes:
     number_of_notes = total_amount // note
