@@ -17,3 +17,9 @@ def rat_maze(maze, i, j, m, n , arr):
     arr[i][j] = 0
     return False
   
+maze = [[0, 1, 0, 1, 1], [0, 0, 0, 0, 0], [1, 0, 1, 0, 1], [0, 0, 1, 0, 0], [1, 0, 0, 1, 0]]
+
+arr = [[0 for i in range(len(maze[0]))] for j in range(len(maze))]
+rat_maze(maze, 0, 0, len(maze), len(maze[0]), arr)
+for i in arr:
+  print(i)
