@@ -10,6 +10,6 @@ def print2LArgest(a, arr_size):
   print(secondLargest)
 
 arr = [191, 84, 140, 45, 74, 74, 47, 17, 8, 12]
-arr_size = len(arr)\
+arr_size = len(arr)
 
 print2LArgest(arr, arr_size)
