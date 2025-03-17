@@ -13,7 +13,7 @@ def median_of_array(arr, arr_size):
   
   if arr_size % 2 != 0:
     return float(arr[int(arr_size/2)])
-  return float((arr[int(arr_size/2)]+arr[int(arr_size-1)/2])/2.0)
+  return float((arr[arr_size // 2] + arr[(arr_size // 2) - 1]) / 2.0)
 
 arr = [191, 84, 140, 45, 74, 74, 47, 17, 8, 12]
 arr_size = len(arr)
