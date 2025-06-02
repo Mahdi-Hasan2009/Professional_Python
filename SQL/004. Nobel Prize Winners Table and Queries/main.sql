@@ -1,0 +1,22 @@
+CREATE TABLE NOBELISTS(
+YEAR INTEGER,
+SUBJECT TEXT,
+WINNER TEXT,
+COUNTRY TEXT,
+CATEGORY TEXT
+);
+
+INSERT INTO NOBELISTS(
+  YEAR,
+  SUBJECT,
+  WINNER,
+  COUNTRY,
+  CATEGORY
+)VALUES
+(2023, "Physics", "Pierre Agostini", "USA", "Science"),
+(2006, "PEACE", "MOHAMMAD YU NUS", "BANGLADES", "PEACE"),
+(2023, "Chemistry", "Moungi G. Bawendi", "USA", "Science"),
+(2023, "Chemistry", "Louis E. Brus", "USA", "Science");
+
+SELECT * FROM NOBELISTS
+WHERE SUBJECT NOT LIKE "P%";
